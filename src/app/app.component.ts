@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,19 +8,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+  photos: any[] = [];
 
-
-  photos = [
-    {
-      url:  "https://github.com/LFelpsDev.png",
-      description: "eu1"
-    },
-    {
-      url: "https://github.com/LFelpsDev.png",
-      description: "eu2"
-    }
-  ]
-
-
+  constructor(http: HttpClient){
+    http
+    .get<Object[]>("http://localhost:3000/felipe")
+    .subscribe(photos => {
+      this.photos = photos;
+      console.table(photos)
+    }, err => console.log(err.message));
+  }
 
 }
