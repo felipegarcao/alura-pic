@@ -6,5 +6,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'alurapic';
+
+
+
+  photos = [
+    {
+      url:  "https://github.com/LFelpsDev.png",
+      description: "eu1"
+    },
+    {
+      url: "https://github.com/LFelpsDev.png",
+      description: "eu2"
+    }
+  ]
+
+
+
 }
